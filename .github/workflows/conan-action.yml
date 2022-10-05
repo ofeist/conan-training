@@ -1,7 +1,7 @@
 name: Conan Actions
 on: [push]
 jobs:
-  Conan-Training:
+  Consumer-Build-Run:
     timeout-minutes: 2
     runs-on: ubuntu-latest
     steps:
