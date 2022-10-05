@@ -1,7 +1,7 @@
 name: Conan Actions
 on: [push]
 jobs:
-  Install-Connan:
+  Conan-Training:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
@@ -22,4 +22,9 @@ jobs:
         run: |
           cd consumer
           pwd; ls -la;
+          mkdir build && cd build
+          conan install ..
+          echo "cat conanbuildinfo.cmake"
+          cmake .. -DCMAKE_BUILD_TYPE=Release
+          cmake --build .
       - run: echo "🍏 This job's status is ${{ job.status }}."
