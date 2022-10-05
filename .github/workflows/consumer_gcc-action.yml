@@ -23,7 +23,7 @@ jobs:
       - name: Install conan
         run: |
           pip install conan
-      - name: Build the Timer app
+      - name: Compile the Timer app
         run: |
           cd consumer_gcc
           pwd; ls -la;
@@ -31,11 +31,9 @@ jobs:
           echo "g++ timer.cpp @conanbuildinfo.args -o timer -std=c++11"
           g++ timer.cpp @conanbuildinfo.args -o timer -std=c++11
           pwd; ls -la;
-      # - name: Run the Timer app
-      #   run: |
-      #     cd consumer/build
-      #     pwd; ls -la;
-      #     cd bin
-      #     pwd; ls -la;
-      #     ./timer
+      - name: Run the Timer app
+        run: |
+          cd consumer/build
+          pwd; ls -la;
+          ./timer
       - run: echo "🍏 This job's status is ${{ job.status }}."
