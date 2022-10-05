@@ -1,1 +1,2 @@
-# conan-training
+# Training
+Support code for conan trainings
