@@ -28,8 +28,8 @@ jobs:
           cd consumer_gcc
           pwd; ls -la;
           conan install . -g compiler_args
-          echo "g++ timer.cpp @conanbuildinfo.args -o timer -std=c+11"
-          g++ timer.cpp @conanbuildinfo.args -o timer -std=c+11
+          echo "g++ timer.cpp @conanbuildinfo.args -o timer -std=c++11"
+          g++ timer.cpp @conanbuildinfo.args -o timer -std=c++11
           pwd; ls -la;
       # - name: Run the Timer app
       #   run: |
