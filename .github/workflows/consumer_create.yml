@@ -1,7 +1,7 @@
-name: Consumer CMake Find Build
+name: Create Conan Package
 on: push
 jobs:
-  consumer_cmake_find-build-run:
+  create-conan-package:
     timeout-minutes: 2
     runs-on: ubuntu-latest
     steps:
@@ -23,10 +23,15 @@ jobs:
       - name: Install conan
         run: |
           pip install conan
-      - name: Compile the Timer app
+      - name: Create the Hello template
         run: |
           cd create
           conan new hello/0.1
           pwd; ls -la;
           cat conanfile.py
+      - name: Create the package
+        run: |
+          cd create
+          conan create . user/testing
+          pwd; ls -la;
       - run: echo "🍏 This job's status is ${{ job.status }}."
