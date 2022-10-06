@@ -1,5 +1,5 @@
 name: Consumer CMake Find Build
-on: push
+on: 
 jobs:
   consumer_cmake_find-build-run:
     timeout-minutes: 2
