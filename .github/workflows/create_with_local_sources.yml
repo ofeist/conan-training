@@ -29,9 +29,9 @@ jobs:
           conan profile update settings.compiler.libcxx=libstdc++11 default
       - name: Create the Hello template
         run: |
-          tree
           cd create_sources
           conan new hello/0.1 -t -s # The -s generates example src
+          tree
           pwd; ls -la;
           cat conanfile.py
           cd src
