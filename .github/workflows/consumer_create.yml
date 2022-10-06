@@ -23,7 +23,7 @@ jobs:
       - name: Install conan
         run: |
           pip install conan
-      - name: Install conan
+      - name: Update compiler settings
         run: |
           conan profile new default --detect
           conan profile update settings.compiler.libcxx=libstdc++11 default
