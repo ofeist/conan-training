@@ -33,7 +33,7 @@ jobs:
           conan profile update settings.compiler.libcxx=libstdc++11 default
           conan install ..
           cmake .. -DCMAKE_BUILD_TYPE=Release 
-          cmake --build . -std=c++11
+          cmake --build .
           pwd; ls -la;
       - name: Run the Timer app
         run: |
