@@ -27,7 +27,7 @@ jobs:
         run: |
           conan profile new default --detect
           conan profile update settings.compiler.libcxx=libstdc++11 default
-      - name: Create the Hello template
+      - name: Create Sources
         run: |
           cd create_sources
           conan new hello/0.1 -t -s # The -s generates example src
@@ -37,5 +37,15 @@ jobs:
           cd src
           pwd; ls -la
           cd ../test_package
+          pwd; ls -la
+      - name: Create user/testing Release
+        run: |
+          cd create_sources
+          conan create . user/testing
+          pwd; ls -la
+      - name: Create user/testing Debug
+        run: |
+          cd create_sources
+          conan create . user/testing -s build_type=Debug
           pwd; ls -la
       - run: echo "🍏 This job's status is ${{ job.status }}."
