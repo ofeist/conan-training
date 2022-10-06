@@ -30,8 +30,8 @@ jobs:
           mkdir build && cd build
           pwd; ls -la;
           conan install ..
-          cmake .. -DCMAKE_BUILD_TYPE=Release
-          cmake --build .
+          cmake .. -DCMAKE_BUILD_TYPE=Release 
+          cmake --build . -std=c++11
           pwd; ls -la;
       - name: Run the Timer app
         run: |
