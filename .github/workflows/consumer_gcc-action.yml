@@ -1,5 +1,5 @@
 name: Consumer GCC Build
-on: [push]
+on:
 jobs:
   Consumer_gcc-Build-Run:
     timeout-minutes: 2
