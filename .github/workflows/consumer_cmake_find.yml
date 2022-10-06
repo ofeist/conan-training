@@ -30,6 +30,8 @@ jobs:
           mkdir build && cd build
           pwd; ls -la;
           conan install ..
+          conan profile update settings.compiler.libcxx=libstdc++11 default
+          conan install ..
           cmake .. -DCMAKE_BUILD_TYPE=Release 
           cmake --build . -std=c++11
           pwd; ls -la;
