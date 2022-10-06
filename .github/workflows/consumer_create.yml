@@ -34,4 +34,19 @@ jobs:
           cd create
           conan create . user/testing
           pwd; ls -la;
+      - name: Search the package
+        run: |
+          cd create
+          conan search hello/0.1@user/testing
+          pwd; ls -la;
+      - name: Create the debug package
+        run: |
+          cd create
+          conan create . user/testing -s build_type=Debug
+          pwd; ls -la;
+      - name: Search packages
+        run: |
+          cd create
+          conan search hello/0.1@user/testing
+          pwd; ls -la;
       - run: echo "🍏 This job's status is ${{ job.status }}."
