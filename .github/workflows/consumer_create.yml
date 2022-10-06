@@ -65,7 +65,9 @@ jobs:
           pwd; ls -la;
       - name: Run the Timer app
         run: |
-          cd consumer/build/bin
+          cd consumer/build
+          pwd; ls -la;
+          cd bin
           pwd; ls -la;
           ./timer
       - run: echo "🍏 This job's status is ${{ job.status }}."
