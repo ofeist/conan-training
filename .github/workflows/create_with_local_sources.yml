@@ -32,4 +32,9 @@ jobs:
           cd create_sources
           conan new hello/0.1 -t -s # The -s generates example src
           pwd; ls -la;
+          cat conanfile.py
+          cd src
+          pwd; ls -la
+          cd ../test_package
+          pwd; ls -la
       - run: echo "🍏 This job's status is ${{ job.status }}."
