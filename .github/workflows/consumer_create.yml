@@ -1,5 +1,5 @@
 name: Create Conan Package
-on: push
+on: 
 jobs:
   create-conan-package:
     timeout-minutes: 2
