@@ -29,13 +29,13 @@ jobs:
           conan profile update settings.compiler.libcxx=libstdc++11 default
       - name: Create Sources
         run: |
-          cd create
+          cd create_options
           conan create . user/training -o hello:shared=True
           conan create . user/training -o hello:shared=True -s build_type=Debug
           tree
           pwd; ls -la;
       - name: Conan search
         run: |
-          cd create
+          cd create_options
           conan search hello/0.1@user/testing
       - run: echo "🍏 This job's status is ${{ job.status }}."
