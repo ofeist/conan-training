@@ -30,8 +30,8 @@ jobs:
       - name: Create Sources
         run: |
           cd create_options
-          conan create . user/training -o greet"language=English
-          conan create . user/training -o greet"language=Spanish
+          conan create . user/training -o greet:language=English
+          conan create . user/training -o greet:language=Spanish
           tree
           pwd; ls -la;
       - name: Tree and ls
