@@ -1,5 +1,5 @@
 name: Create From Local Sources
-on: push
+on: 
 jobs:
   create-from-local-sources:
     timeout-minutes: 2
